@@ -25,7 +25,17 @@ export default class CartItem extends Component {
     }
 
     IncreaseQty=()=>{
-        console.log("Increase has been clicked" , this.state);
+        // console.log("Increase has been clicked" , this.state.Qty);
+        this.setState({
+            Qty: this.state.Qty+1
+        })
+
+        // setState form 2 when prevState is needed
+        // this.setState((prevState) =>{
+        //     return{
+        //         Qty: prevState.Qty +1
+        //     }
+        // }
 
     }
   render() {
