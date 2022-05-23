@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 const style = {
     image:{
         height: 110,
@@ -11,18 +10,7 @@ const style = {
 };
 
 export default class CartItem extends Component {
-    // to declaring state using constructor
-    constructor(){
-        super();
-        // ths.state will be a obejct
-        this.state={
-            title:"Phone",
-            price: 999,
-            Qty: 1,
-            img: '/'
-
-        }
-    }
+   
 
     IncreaseQty=()=>{
         // console.log("Increase has been clicked" , this.state.Qty);
@@ -50,7 +38,7 @@ export default class CartItem extends Component {
 
   render() {
 // Object destructuring
-    const{title, price, Qty} = this.state;
+    const{title, price, Qty} = this.props.product;
     return (
       <div className="cart-item ">
           <div className="left-block">
