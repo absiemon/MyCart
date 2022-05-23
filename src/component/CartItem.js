@@ -38,6 +38,16 @@ export default class CartItem extends Component {
         // }
 
     }
+
+    DecreaseQty = ()=>{
+
+        if(this.state.Qty>1){
+            this.setState({
+                Qty: this.state.Qty-1
+            })
+        }
+    }
+
   render() {
 // Object destructuring
     const{title, price, Qty} = this.state;
@@ -52,9 +62,9 @@ export default class CartItem extends Component {
               <div style={{color: '#777'}}>Qty: {Qty}</div>
               <div className="cart-item-action">
 
-                <img alt="increase" className="action-icon" onClick={this.IncreaseQty} src="https://cdn-icons.flaticon.com/png/512/3303/premium/3303893.png?token=exp=1651898950~hmac=1648bf0a05f56dc28201561e8db5b077"/>
-                <img alt="decrease" className="action-icon" src="https://cdn-icons-png.flaticon.com/512/992/992683.png"/>
-                <img alt="delete" className="action-icon" src="https://cdn-icons.flaticon.com/png/512/484/premium/484611.png?token=exp=1651899123~hmac=2ef1e1f866dcd7398c91e876eb3cb334"/>
+                <img alt="increase" className="action-icon" onClick={this.IncreaseQty} src="https://cdn-icons-png.flaticon.com/512/992/992651.png"/>
+                <img alt="decrease" className="action-icon" onClick={this.DecreaseQty} src="https://cdn-icons-png.flaticon.com/512/992/992683.png"/>
+                <img alt="delete" className="action-icon" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"/>
 
               </div>
 
