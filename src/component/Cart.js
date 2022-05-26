@@ -6,7 +6,7 @@ export default class Cart extends Component {
      constructor(){
         super();
         // ths.state will be a obejct
-        this.state={
+        this.state={       // products is a array of the product
             
             products:[{
                 title:"Mobile Phone",
@@ -28,7 +28,7 @@ export default class Cart extends Component {
                 price: 9999,
                 Qty: 2,
                 img: '/',
-                id: 2
+                id: 3
 
             }
         ]
@@ -51,12 +51,21 @@ export default class Cart extends Component {
         const index = products.indexOf(product);
         if( products[index].Qty >1){
 
-            products[index].Qty -=1;
+            products[index].Qty -=1; 
             this.setState({
                 products: products
               });
         }
        
+    }
+    // in delete function we have to delete product whose id will be given as argument of the function
+    //filter is a function that filters the elements of array based on some conditions and return a new array of elements , filter takes a function as argument//
+    handleOnDelete = (id)=>{
+        const{products} = this.state;
+       const newArray = products.filter((element)=> element.id!== id);
+        this.setState({
+            products:newArray
+        })
     }
   render() {
      
@@ -66,10 +75,10 @@ export default class Cart extends Component {
           
           {products.map((product)=>{
               return (
-                 <CartItem product={product} key={product.id} IncreaseQtyByOne ={this.handleOnIncrease} DecreaseQtyByOne={this.handleOnDecrease}/>
+                 <CartItem product={product} key={product.id} IncreaseQtyByOne ={this.handleOnIncrease} DecreaseQtyByOne={this.handleOnDecrease} DeleteProduct={this.handleOnDelete}/>
               )
           })}
-
+ 
       </div>
     )
   }

@@ -36,7 +36,7 @@ export default class CartItem extends Component {
         }
     }
 
-  render() {
+  render() {  
 // Object destructuring
     const{title, price, Qty} = this.props.product;
     return (
@@ -50,9 +50,9 @@ export default class CartItem extends Component {
               <div style={{color: '#777'}}>Qty: {Qty}</div>
               <div className="cart-item-action">
 
-                <img alt="increase" className="action-icon" onClick={()=>{this.props.IncreaseQtyByOne(this.props.product)}} src="https://cdn-icons-png.flaticon.com/512/992/992651.png"/>
-                <img alt="decrease" className="action-icon" onClick={()=>{this.props.DecreaseQtyByOne(this.props.product)}} src="https://cdn-icons-png.flaticon.com/512/992/992683.png"/>
-                <img alt="delete" className="action-icon" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"/>
+                <img alt="increase" className="action-icon" onClick={()=> this.props.IncreaseQtyByOne(this.props.product)} src="https://cdn-icons-png.flaticon.com/512/992/992651.png"/>
+                <img alt="decrease" className="action-icon" onClick={()=> this.props.DecreaseQtyByOne(this.props.product)} src="https://cdn-icons-png.flaticon.com/512/992/992683.png"/>
+                <img alt="delete" className="action-icon"   onClick={()=> this.props.DeleteProduct  (this.props.product.id)} src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"/>
 
               </div>
 
