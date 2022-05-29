@@ -5,7 +5,7 @@ const style = {
         height: 110,
         width: 110,
         borderRadius: 4,
-        backgroundColor: "grey"
+        // backgroundColor: "grey"
     }
 };
 
@@ -37,12 +37,12 @@ export default class CartItem extends Component {
     }
 
   render() {  
-// Object destructuring
+// Object destructuring 
     const{title, price, Qty} = this.props.product;
     return (
       <div className="cart-item ">
           <div className="left-block">
-              <img style={style.image}/>
+              <img style={style.image} src={this.props.product.img}/>
           </div>
           <div className="right-block">
               <div style={{fontSize: 25}}> {title}</div>
