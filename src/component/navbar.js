@@ -5,8 +5,9 @@ export default class Navbar extends Component {
     return (
         <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <img className="navbar-brand" src= "Logo.png" style={{height:'56px', width:'47px', position:'absolute'}}/>
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">MyCart</a>
+          <a className="navbar-brand mx-5" href="#">MyCart</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
           </button>

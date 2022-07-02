@@ -12,11 +12,6 @@ const style = {
 export default class CartItem extends Component {
    
 
-    IncreaseQty=()=>{
-        // console.log("Increase has been clicked" , this.state.Qty);
-        this.setState({
-            Qty: this.state.Qty+1
-        })
 
         // setState form 2 when prevState is needed
         // this.setState((prevState) =>{
@@ -25,17 +20,8 @@ export default class CartItem extends Component {
         //     }
         // }
 
-    }
 
-    DecreaseQty = ()=>{
-
-        if(this.state.Qty>1){
-            this.setState({
-                Qty: this.state.Qty-1
-            })
-        }
-    }
-
+ 
   render() {  
 // Object destructuring 
     const{title, price, Qty} = this.props.product;
